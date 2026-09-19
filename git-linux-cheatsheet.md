@@ -44,7 +44,44 @@ git push                    # 推送当前分支
 git push -u origin 分支名   # 首次推送并建立关联
 ```
 
-### 5. 撤销与恢复
+### 5. 本地仓库、远程仓库与分支
+
+可以把它们理解成两个位置：
+
+```text
+本地仓库 = 电脑上的 Git 仓库
+远程仓库 = GitHub 上的 Git 仓库
+```
+
+几个名称的含义：
+
+```text
+origin       # 远程仓库的名字，通常指向 GitHub
+main         # 分支的名字，通常是主分支
+origin/main  # origin 远程仓库里的 main 分支
+```
+
+常用查看命令：
+
+```bash
+git branch                  # 查看本地分支
+git branch -r               # 查看远程跟踪分支
+git branch -a               # 查看本地和远程所有分支
+git remote -v               # 查看远程仓库地址
+git fetch                   # 获取远程最新信息，但不修改当前文件
+```
+
+例如：
+
+```bash
+git push -u origin main     # 把本地 main 推送到 origin，并建立关联
+git push                    # 推送当前分支的最新提交
+git pull                    # 拉取并合并远程最新内容
+```
+
+记忆方式：`origin` 是远程仓库，`main` 是分支，`origin/main` 是远程仓库中的 main 分支。
+
+### 6. 撤销与恢复
 
 ```bash
 git restore 文件名          # 丢弃工作区修改
